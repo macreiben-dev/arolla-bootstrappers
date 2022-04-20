@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.DapperSamples"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.DapperSamples.Acceptance.Tests", "Repositories.DapperSamples.Acceptance.Tests\Repositories.DapperSamples.Acceptance.Tests.csproj", "{D3704139-B35B-4C0A-9E30-4C5075A1BC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainReservation.Tests", "RainReservation.Tests\RainReservation.Tests.csproj", "{67A925CB-9DA2-403C-9D43-61F12278F4B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{D3704139-B35B-4C0A-9E30-4C5075A1BC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3704139-B35B-4C0A-9E30-4C5075A1BC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3704139-B35B-4C0A-9E30-4C5075A1BC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A925CB-9DA2-403C-9D43-61F12278F4B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A925CB-9DA2-403C-9D43-61F12278F4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A925CB-9DA2-403C-9D43-61F12278F4B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A925CB-9DA2-403C-9D43-61F12278F4B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
