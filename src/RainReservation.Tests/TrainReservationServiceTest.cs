@@ -36,7 +36,7 @@ namespace RainReservation.Tests
             var actual = sut.BookSeat(trainName, coachName, seatName);
 
             // Assert 
-            Assert.Equal(bookingRef, actual);
+            Assert.Equal(bookingRef, actual.BookingRef);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace RainReservation.Tests
             var trainName = "SomeTrain";
             var coachName = "SomeCoach";
             var seatName = 12345;
-            
+
             _trainRepo.GetAvailableSeatByTrainName(trainName)
                 .Returns(0);
 
@@ -71,15 +71,39 @@ namespace RainReservation.Tests
 
             _trainRepo.GetAvailableSeatByTrainName(trainName)
                 .Returns(avaiableSeats);
-            
+
             // Act
             TrainReservationService sut = GetSut();
 
-            var actual = sut.BookSeat(trainName, coachName, seatName);
+            Reservation actual = sut.BookSeat(trainName, coachName, seatName);
 
             // Assert
-            Assert.Equal(bookingRef, actual);
+            Assert.Equal(bookingRef, actual.BookingRef);
         }
+
+        [Fact]
+        public void Given_availableSeats_then_generate_reservation()
+        {
+            var trainName = "SomeTrain";
+            var coachName = "SomeCoach";
+            var seatName = 12345;
+            var bookingRef = "BookRef01";
+
+            _trainRepo.GetAvailableSeatByTrainName(trainName)
+               .Returns(3);
+            // Act
+            TrainReservationService sut = GetSut();
+
+            Reservation actual = sut.BookSeat(trainName, coachName, seatName);
+
+            Assert.Equal(actual.BookingRef, bookingRef);
+            Assert.Equal(actual.TrainName, trainName);
+            Assert.Equal(actual.SeatName, seatName);
+
+        }
+
+
+
     }
 
 }

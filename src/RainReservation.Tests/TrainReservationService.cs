@@ -11,7 +11,7 @@ namespace RainReservation.Tests
             this.trainRepo = trainRepo;
         }
 
-        internal object BookSeat(string trainName, string coachName, int seatName)
+        internal Reservation BookSeat(string trainName, string coachName, int seatName)
         {
             int availableSeat = trainRepo.GetAvailableSeatByTrainName(trainName);
 
@@ -20,7 +20,10 @@ namespace RainReservation.Tests
                 throw new Exception();
             }
 
-            return "BookRef01";
+            return new Reservation() { BookingRef= "BookRef01",
+                TrainName=trainName,
+                SeatName=seatName
+            };
         }
 
         private static bool IsFull(int availableSeat)
