@@ -14,6 +14,11 @@ namespace RainReservation.Tests
             _trainRepo = Substitute.For<ITrainRepository>();
         }
 
+        private TrainReservationService GetSut()
+        {
+            return new TrainReservationService(_trainRepo);
+        }
+
         [Fact]
         public void Given_The_Train_is_Empty_Then_I_Book_A_Seat()
         {
@@ -34,11 +39,6 @@ namespace RainReservation.Tests
             Assert.Equal(bookingRef, actual);
         }
 
-        private TrainReservationService GetSut()
-        {
-            return new TrainReservationService(_trainRepo);
-        }
-
         [Fact]
         public void Given_train_is_full_then_fail()
         {
@@ -56,6 +56,29 @@ namespace RainReservation.Tests
             // Assert
             Assert.Throws<Exception>(() =>
                 sut.BookSeat(trainName, coachName, seatName));
+        }
+
+        [Theory]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        public void Given_availableSeats_then_I_can_book(int avaiableSeats)
+        {
+            var trainName = "SomeTrain";
+            var coachName = "SomeCoach";
+            var seatName = 12345;
+            var bookingRef = "BookRef01";
+
+            _trainRepo.GetAvailableSeatByTrainName(trainName)
+                .Returns(avaiableSeats);
+            
+            // Act
+            TrainReservationService sut = GetSut();
+
+            var actual = sut.BookSeat(trainName, coachName, seatName);
+
+            // Assert
+            Assert.Equal(bookingRef, actual);
         }
     }
 

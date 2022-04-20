@@ -15,12 +15,17 @@ namespace RainReservation.Tests
         {
             int availableSeat = trainRepo.GetAvailableSeatByTrainName(trainName);
 
-            if(availableSeat == 0)
+            if (IsFull(availableSeat))
             {
                 throw new Exception();
             }
 
             return "BookRef01";
+        }
+
+        private static bool IsFull(int availableSeat)
+        {
+            return availableSeat == 0;
         }
     }
 }
