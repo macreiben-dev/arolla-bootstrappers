@@ -1,7 +1,10 @@
-﻿namespace RainReservation.Tests
+﻿using System.Collections.Generic;
+
+namespace RainReservation.Tests
 {
     public interface ITrainRepository
     {
-        int GetAvailableSeatByTrainName(string trainName);
+        int GetAvailableSeatCountByTrainName(string trainName);
+        IEnumerable<Seat> GetAvaibleSeats(string trainName);
     }
 }

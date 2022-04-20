@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RainReservation.Tests
 {
@@ -11,18 +13,22 @@ namespace RainReservation.Tests
             this.trainRepo = trainRepo;
         }
 
-        internal Reservation BookSeat(string trainName, string coachName, int seatName)
+        internal Reservation BookSeat(string trainName, string coachName, string seatName)
         {
-            int availableSeat = trainRepo.GetAvailableSeatByTrainName(trainName);
+            int availableSeatCount = trainRepo.GetAvailableSeatCountByTrainName(trainName);
 
-            if (IsFull(availableSeat))
+            if (IsFull(availableSeatCount))
             {
                 throw new Exception();
             }
 
-            return new Reservation() { BookingRef= "BookRef01",
-                TrainName=trainName,
-                SeatName=seatName
+            IEnumerable<Seat> availableSeats = trainRepo.GetAvaibleSeats(trainName);
+
+            return new Reservation()
+            {
+                BookingRef = "BookRef01",
+                TrainName = trainName,
+                SeatName = availableSeats.First().SeatNumber + availableSeats.First().CoachName
             };
         }
 
