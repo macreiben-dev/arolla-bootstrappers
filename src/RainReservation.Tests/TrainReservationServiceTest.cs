@@ -5,11 +5,11 @@ using Xunit;
 
 namespace RainReservation.Tests
 {
-    public class UnitTest1
+    public class TrainReservationServiceTest
     {
         private ITrainRepository _trainRepo;
 
-        public UnitTest1()
+        public TrainReservationServiceTest()
         {
             _trainRepo = Substitute.For<ITrainRepository>();
         }
@@ -40,14 +40,13 @@ namespace RainReservation.Tests
         }
 
         [Fact]
-        void Given_train_is_full_then_fail()
+        public void Given_train_is_full_then_fail()
         {
             // Arrange
             var trainName = "SomeTrain";
             var coachName = "SomeCoach";
             var seatName = 12345;
-            var bookingRef = "BookRef01";
-
+            
             _trainRepo.GetAvailableSeatByTrainName(trainName)
                 .Returns(0);
 
