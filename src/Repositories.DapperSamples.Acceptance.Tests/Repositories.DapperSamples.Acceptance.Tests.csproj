@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Repositories.DapperSamples\Repositories.DapperSamples.csproj" />
     <ProjectReference Include="..\TrainReservationCore\TrainReservationCore.csproj" />
+    <ProjectReference Include="..\TrainReservationRepos\TrainReservationRepos.csproj" />
   </ItemGroup>
 
 </Project>

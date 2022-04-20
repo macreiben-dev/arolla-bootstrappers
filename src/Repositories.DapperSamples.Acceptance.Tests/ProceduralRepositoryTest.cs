@@ -107,7 +107,8 @@ namespace Repositories.DapperSamples.Acceptance.Tests
 
                 var cmd = connection.CreateCommand();
 
-                cmd.CommandText = "SELECT Id, VeryImportantData FROM SimpleDatas";
+                cmd.CommandText = @"SELECT Id, VeryImportantData 
+                    FROM SimpleDatas";
                 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

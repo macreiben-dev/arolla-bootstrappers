@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainReservation.Tests", "Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainReservationCore", "TrainReservationCore\TrainReservationCore.csproj", "{AAE135AC-80F4-47D1-B164-27B477C33EB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainReservationRepos", "TrainReservationRepos\TrainReservationRepos.csproj", "{1C522E6F-87E1-44E0-8E8F-11E7FA53EACC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{AAE135AC-80F4-47D1-B164-27B477C33EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE135AC-80F4-47D1-B164-27B477C33EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE135AC-80F4-47D1-B164-27B477C33EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C522E6F-87E1-44E0-8E8F-11E7FA53EACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C522E6F-87E1-44E0-8E8F-11E7FA53EACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C522E6F-87E1-44E0-8E8F-11E7FA53EACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C522E6F-87E1-44E0-8E8F-11E7FA53EACC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

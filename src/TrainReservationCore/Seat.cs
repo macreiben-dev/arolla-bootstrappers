@@ -5,10 +5,10 @@
         private string v1;
         private int v2;
 
-        public Seat(string v1, int v2)
+        public Seat(string coachName, int seatNumber)
         {
-            CoachName = v1;
-            SeatNumber = v2;
+            CoachName = coachName;
+            SeatNumber = seatNumber;
         }
 
         public string CoachName { get => v1; set => v1 = value; }
