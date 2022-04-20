@@ -1,4 +1,4 @@
-﻿namespace RainReservation.Tests
+﻿namespace TrainReservationCore
 {
     public class Seat
     {
@@ -7,8 +7,8 @@
 
         public Seat(string v1, int v2)
         {
-            this.CoachName = v1;
-            this.SeatNumber = v2;
+            CoachName = v1;
+            SeatNumber = v2;
         }
 
         public string CoachName { get => v1; set => v1 = value; }

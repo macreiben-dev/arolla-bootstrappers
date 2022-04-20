@@ -2,6 +2,7 @@ using Arolla.WebApis;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
+using TrainReservationCore;
 using Xunit;
 
 namespace RainReservation.Tests

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RainReservation.Tests
+namespace TrainReservationCore
 {
     public class Reservation
     {

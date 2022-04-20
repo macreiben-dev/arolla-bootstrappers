@@ -1,4 +1,4 @@
-﻿namespace RainReservation.Tests
+﻿namespace TrainReservationCore
 {
     public interface IBookRefRepository
     {
