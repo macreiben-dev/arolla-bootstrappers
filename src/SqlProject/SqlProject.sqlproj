@@ -59,5 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="SimpleDatas.sql" />
+    <Build Include="TrainReservations.sql" />
   </ItemGroup>
 </Project>

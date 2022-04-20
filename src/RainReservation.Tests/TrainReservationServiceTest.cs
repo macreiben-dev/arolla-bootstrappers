@@ -9,15 +9,18 @@ namespace RainReservation.Tests
     public class TrainReservationServiceTest
     {
         private ITrainRepository _trainRepo;
+        private IBookRefRepository _bookRefRepo;
 
         public TrainReservationServiceTest()
         {
             _trainRepo = Substitute.For<ITrainRepository>();
+
+            _bookRefRepo = Substitute.For<IBookRefRepository>();
         }
 
         private TrainReservationService GetSut()
         {
-            return new TrainReservationService(_trainRepo);
+            return new TrainReservationService(_trainRepo, _bookRefRepo);
         }
 
         [Fact]
@@ -50,7 +53,9 @@ namespace RainReservation.Tests
             var trainName = "SomeTrain";
             var coachName = "SomeCoach";
             var seatName = "12345";
-            var bookingRef = "BookRef01";
+            var bookingRef = "c19a6a4c-b310-4ba9-a535-453516805635";
+
+            _bookRefRepo.NewBookRef().Returns(bookingRef);
 
             _trainRepo.GetAvailableSeatCountByTrainName(trainName)
             .Returns(4);

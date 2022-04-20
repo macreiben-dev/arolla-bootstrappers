@@ -2,7 +2,7 @@
 
 namespace RainReservation.Tests
 {
-    internal class Reservation
+    public class Reservation
     {
         public string BookingRef { get; internal set; }
         public string TrainName { get; internal set; }

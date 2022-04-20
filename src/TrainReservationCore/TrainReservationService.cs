@@ -4,16 +4,20 @@ using System.Linq;
 
 namespace RainReservation.Tests
 {
-    internal class TrainReservationService
+    public class TrainReservationService
     {
         private readonly ITrainRepository trainRepo;
+        private readonly IBookRefRepository bookRefRepo;
 
-        public TrainReservationService(ITrainRepository trainRepo)
+        public TrainReservationService(
+            ITrainRepository trainRepo, 
+            IBookRefRepository bookRefRepo)
         {
             this.trainRepo = trainRepo;
+            this.bookRefRepo = bookRefRepo;
         }
 
-        internal Reservation BookSeat(string trainName, string coachName, string seatName)
+        public Reservation BookSeat(string trainName, string coachName, string seatName)
         {
             int availableSeatCount = trainRepo.GetAvailableSeatCountByTrainName(trainName);
 
@@ -26,7 +30,7 @@ namespace RainReservation.Tests
 
             return new Reservation()
             {
-                BookingRef = "BookRef01",
+                BookingRef = bookRefRepo.NewBookRef(),
                 TrainName = trainName,
                 SeatName = availableSeats.First().SeatNumber + availableSeats.First().CoachName
             };
